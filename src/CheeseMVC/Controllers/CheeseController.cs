@@ -38,6 +38,8 @@ namespace CheeseMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                //if (context.Categories.Single(c => c.Name in context.Categories)
+                    //return Redirect("/Cheese");
                 // Add the new cheese to my existing cheeses
                 CheeseCategory newCheeseCategory = context.Categories.Single(c => c.ID == addCheeseViewModel.CategoryID);
                 Cheese newCheese = new Cheese

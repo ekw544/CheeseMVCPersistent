@@ -40,6 +40,5 @@ namespace CheeseMVC.ViewModels
         public AddCheeseViewModel() {
             Categories = new List<SelectListItem>();
         }
-        //left off at Updating the ViewModel
     }
 }
