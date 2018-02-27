@@ -1,0 +1,14 @@
+﻿<h1>@ViewBag.title</h1>
+<p>Note: Removing any categories will also remove Cheeses with that category.</p>
+
+<form method="post">
+
+    @foreach (var category in ViewBag.categories)
+    {
+        <input type="checkbox" name="categoryIds" id="@category.ID" value="@category.ID" />
+        <label for="@category.ID">@category.Name</label>
+        <br />
+    }
+
+    <input type="submit" value="Remove Selected Categories" />
+</form>

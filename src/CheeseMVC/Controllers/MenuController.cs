@@ -115,5 +115,26 @@ namespace CheeseMVC.Controllers
         //and they are saved to the database, EF Core will be able to pull the correct
         //objects since they are already stored in their respective tables
 
+        public IActionResult Remove()
+        {
+            ViewBag.title = "Remove Menus";
+            ViewBag.menus = context.Menus.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Remove(int[] menuIds)
+        {
+            foreach (int menuId in menuIds)
+            {
+                Menu theMenu = context.Menus.Single(c => c.ID == menuId);
+                context.Menus.Remove(theMenu);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Menu");
+        }
+
     }
 }
